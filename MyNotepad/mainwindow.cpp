@@ -6,6 +6,8 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QTextStream>
+#include <QColorDialog>
+#include <QFontDialog>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -35,6 +37,18 @@ MainWindow::MainWindow(QWidget *parent)
     ui->actionCopy->setEnabled(false);
     ui->actionCut->setEnabled(false);
     ui->actionPaste->setEnabled(false);
+
+    QPlainTextEdit::LineWrapMode mode = ui->textEdit->lineWrapMode();
+
+    if ( mode == QTextEdit::NoWrap ) {
+        ui->textEdit->setLineWrapMode(QPlainTextEdit::WidgetWidth);
+
+        ui->actionLineWrap->setChecked(false);
+    } else{
+        ui->textEdit->setLineWrapMode(QPlainTextEdit::NoWrap);
+
+        ui->actionLineWrap->setChecked(true);
+    }
 }
 
 MainWindow::~MainWindow()
@@ -268,17 +282,23 @@ void MainWindow::on_textEdit_redoAvailable(bool b)
 
 void MainWindow::on_actionFontColor_triggered()
 {
-
+    QColor color = QColorDialog::getColor(Qt::black, this, "选择颜色");
+    if (color.isValid()) {
+        ui->textEdit->setStyleSheet(QString("QPlainTextEdit {color: %1}").arg(color.name()));
+    }
 }
 
 
-void MainWindow::on_actionBackgroundColor_triggered()
+void MainWindow::on_actionBackgroundColor_triggered()//字体颜色与编辑器背景色不兼容
 {
-
+    QColor color = QColorDialog::getColor(Qt::black, this, "选择颜色");
+    if (color.isValid()) {
+        ui->textEdit->setStyleSheet(QString("QPlainTextEdit {background-color: %1}").arg(color.name()));
+    }
 }
 
 
-void MainWindow::on_actionFontBackgroundColor_triggered()
+void MainWindow::on_actionFontBackgroundColor_triggered()//QTextEdit支持，QPlainTextEdit不支持
 {
 
 }
@@ -286,6 +306,27 @@ void MainWindow::on_actionFontBackgroundColor_triggered()
 
 void MainWindow::on_actionLineWrap_triggered()
 {
+    QPlainTextEdit::LineWrapMode mode = ui->textEdit->lineWrapMode();
 
+    if ( mode == QTextEdit::NoWrap ) {
+        ui->textEdit->setLineWrapMode(QPlainTextEdit::WidgetWidth);
+
+        ui->actionLineWrap->setChecked(true);
+    } else{
+        ui->textEdit->setLineWrapMode(QPlainTextEdit::NoWrap);
+
+        ui->actionLineWrap->setChecked(false);
+    }
+
+}
+
+
+void MainWindow::on_actionFont_triggered()//字体更改后保存还是原样，没有变化
+{
+    bool ok = false;
+    QFont font = QFontDialog::getFont(&ok,this);
+
+    if (ok)
+        ui->textEdit->setFont(font);
 }
 
