@@ -74,13 +74,13 @@
     <property name="title">
      <string>格式(&amp;Q)</string>
     </property>
-    <addaction name="actionWordWrap"/>
+    <addaction name="actionLineWrap"/>
     <addaction name="actionLineNumber"/>
     <addaction name="actionFont"/>
     <addaction name="actionFontColor"/>
     <addaction name="separator"/>
-    <addaction name="actionFontBgcolor"/>
-    <addaction name="actionEditorBgcolor"/>
+    <addaction name="actionFontBackgroundColor"/>
+    <addaction name="actionBackgroundColor"/>
    </widget>
    <widget class="QMenu" name="menu_V">
     <property name="title">
@@ -135,7 +135,7 @@
    <addaction name="actionFind"/>
    <addaction name="actionReplace"/>
    <addaction name="separator"/>
-   <addaction name="actionWordWrap"/>
+   <addaction name="actionLineWrap"/>
    <addaction name="actionLineNumber"/>
    <addaction name="actionFont"/>
    <addaction name="separator"/>
@@ -365,7 +365,7 @@
     <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
-  <action name="actionWordWrap">
+  <action name="actionLineWrap">
    <property name="checkable">
     <bool>true</bool>
    </property>
@@ -427,7 +427,7 @@
     <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
-  <action name="actionFontBgcolor">
+  <action name="actionFontBackgroundColor">
    <property name="text">
     <string>字体背景色</string>
    </property>
@@ -438,7 +438,7 @@
     <enum>QAction::MenuRole::NoRole</enum>
    </property>
   </action>
-  <action name="actionEditorBgcolor">
+  <action name="actionBackgroundColor">
    <property name="text">
     <string>编辑器背景色</string>
    </property>

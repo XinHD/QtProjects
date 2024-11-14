@@ -265,3 +265,27 @@ void MainWindow::on_textEdit_redoAvailable(bool b)
 
 }
 
+
+void MainWindow::on_actionFontColor_triggered()
+{
+
+}
+
+
+void MainWindow::on_actionBackgroundColor_triggered()
+{
+
+}
+
+
+void MainWindow::on_actionFontBackgroundColor_triggered()
+{
+
+}
+
+
+void MainWindow::on_actionLineWrap_triggered()
+{
+
+}
+
