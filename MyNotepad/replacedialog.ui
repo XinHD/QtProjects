@@ -41,10 +41,10 @@
          <item>
           <layout class="QVBoxLayout" name="verticalLayout_2">
            <item>
-            <widget class="QLineEdit" name="searchEdit"/>
+            <widget class="QLineEdit" name="searchText"/>
            </item>
            <item>
-            <widget class="QLineEdit" name="targetEdit"/>
+            <widget class="QLineEdit" name="targetText"/>
            </item>
           </layout>
          </item>

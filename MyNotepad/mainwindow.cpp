@@ -79,7 +79,7 @@ void MainWindow::on_actionFind_triggered()
 
 void MainWindow::on_actionReplace_triggered()
 {
-    ReplaceDialog dig;
+    ReplaceDialog dig(this, ui->textEdit);
     dig.exec();
 
 }
