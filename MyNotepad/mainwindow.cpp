@@ -71,7 +71,7 @@ void MainWindow::on_actionAbout_triggered()
 
 void MainWindow::on_actionFind_triggered()
 {
-    SearchDialog dig;
+    SearchDialog dig(this, ui->textEdit);
     dig.exec();
 
 }
@@ -358,7 +358,7 @@ void MainWindow::on_actionSelectAll_triggered()
 }
 
 
-void MainWindow::on_actionExit_triggered()
+void MainWindow::on_actionExit_triggered()//部分功能待完善。
 {
     if (userEditConfirmed())
         exit(0);
