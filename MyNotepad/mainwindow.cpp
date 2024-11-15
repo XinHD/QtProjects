@@ -49,6 +49,10 @@ MainWindow::MainWindow(QWidget *parent)
 
         ui->actionLineWrap->setChecked(true);
     }
+
+    ui->actionShowStatusbar->setChecked(true);
+    ui->actionShowToolbar->setChecked(true);
+
 }
 
 MainWindow::~MainWindow()
@@ -328,5 +332,35 @@ void MainWindow::on_actionFont_triggered()//字体更改后保存还是原样，
 
     if (ok)
         ui->textEdit->setFont(font);
+}
+
+
+void MainWindow::on_actionShowToolbar_triggered()
+{
+    bool visible = ui->toolBar->isVisible();
+    ui->toolBar->setVisible(!visible);
+    ui->actionShowToolbar->setChecked(!visible);
+
+}
+
+
+void MainWindow::on_actionShowStatusbar_triggered()
+{
+    bool visible = ui->statusbar->isVisible();
+    ui->statusbar->setVisible(!visible);
+    ui->actionShowStatusbar->setChecked(!visible);
+}
+
+
+void MainWindow::on_actionSelectAll_triggered()
+{
+    ui->textEdit->selectAll();
+}
+
+
+void MainWindow::on_actionExit_triggered()
+{
+    if (userEditConfirmed())
+        exit(0);
 }
 
