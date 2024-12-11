@@ -27,18 +27,23 @@ public slots:
     void goLoginView();
     void goWelcomeView();
     void goDoctorView();
-    void goDepartmantView();
+    void goDepartmentView();
     void goPatientEditView();
     void goPatientView();
     void goPreviousView();
 
+private slots:
+    void on_btBack_clicked();
+
 private:
+    void pushWidgetToStackView(QWidget *widget);
+
     Ui::MasterView *ui;
 
     WelcomeView *welcomeView;
     DoctorView *doctorView;
     PatientView *patientView;
-    DepartmantView *departmantView;
+    DepartmentView *departmentView;
     LoginView *loginView;
     PatientEditView *patientEditView;
 
