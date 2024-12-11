@@ -12,3 +12,38 @@ MasterView::~MasterView()
 {
     delete ui;
 }
+
+void MasterView::goLoginView()
+{
+
+}
+
+void MasterView::goWelcomeView()
+{
+
+}
+
+void MasterView::goDoctorView()
+{
+
+}
+
+void MasterView::goDepartmantView()
+{
+
+}
+
+void MasterView::goPatientEditView()
+{
+
+}
+
+void MasterView::goPatientView()
+{
+
+}
+
+void MasterView::goPreviousView()
+{
+
+}
