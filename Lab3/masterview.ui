@@ -18,8 +18,15 @@
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QPushButton" name="btBack">
-       <property name="text">
-        <string>返回</string>
+       <property name="icon">
+        <iconset resource="Lab3.qrc">
+         <normaloff>:/img/rollback.png</normaloff>:/img/rollback.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>60</width>
+         <height>20</height>
+        </size>
        </property>
       </widget>
      </item>
@@ -59,7 +66,17 @@
      <item>
       <widget class="QPushButton" name="btLogout">
        <property name="text">
-        <string>注销</string>
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="Lab3.qrc">
+         <normaloff>:/img/logout.png</normaloff>:/img/logout.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>60</width>
+         <height>20</height>
+        </size>
        </property>
       </widget>
      </item>
@@ -70,6 +87,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="Lab3.qrc"/>
+ </resources>
  <connections/>
 </ui>

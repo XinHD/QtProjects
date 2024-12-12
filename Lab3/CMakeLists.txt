@@ -29,6 +29,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         departmentview.h departmentview.cpp departmentview.ui
         patientview.h patientview.cpp patientview.ui
         patienteditview.h patienteditview.cpp patienteditview.ui
+        Lab3.qrc
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Lab3 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
